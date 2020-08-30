@@ -7,6 +7,7 @@ Autores: Stefano Aragoni, Rebecca Smith, Roberto Vallecillos
 
 import java.util.Scanner;
 import java.util.Random;
+import java.io.*; 
 
 public class Main {
     public static void main(String[] args) {
@@ -17,15 +18,15 @@ public class Main {
       String nombre;
       String apellido;
       String correo;
-      int age;
+      int age = 0;
       String usuario;
       String pass;
       String user;
       String contra;
 
-      DTest.examenInicialMate(0);
+      DTest.examenInicialLectura(0);
       int opcion1 = scan.nextInt();
-      DTest.RespuestasMate(opcion1);
+      DTest.RespuestasLectura(opcion1);
 
       while(opcion != 3 ){
         System.out.println("¡Bienvenid@ a TutoGuate! Elige una opcion");
@@ -36,22 +37,50 @@ public class Main {
 
         if (opcion == 1){
           System.out.println("Hola bienvenid@, necesitamos algunos datos para comenzar");
-          System.out.println("Ingresa tu nombre");
-          nombre = scan.next();
-          System.out.println("Ingresa tu apellido");
-          apellido= scan.next();
           try{
-          System.out.println("Ingresa tu correo");
-          correo= scan.next();
-          }except{
+          System.out.println("\nIngresa tu nombre");
+          nombre = scan.next();
+          System.out.println("\nIngresa tu apellido");
+          apellido= scan.next();
+      
+          
+          int contador1 = 0;
+          while (contador1 < 1){
+            System.out.println("\nIngresa tu correo");
+            correo= scan.next();
+            int firstIndex = correo.indexOf("@");
+
+            if(((correo.length()) < 7) || (firstIndex == -1)){
+              System.out.println("Por favor ingrese un correo valido."); 
+            }
+            else{
+              contador1 = 1;
+            }
+          }
+
+          System.out.println("\nIngresa tu edad en numeros");
+          int bean = 0;
+          while(bean != 7){
+            try{
+            age = scan.nextInt();
+            bean = 7;
+            }catch(Exception e){
+              System.out.println("Por favor ingresa un numero correcto."); 
+              scan.next();
+              continue;
+            }
+          }
+          
+          System.out.println("\nCrea un nombre de usuario");
+          usuario = scan.next();
+          System.out.println("\nCrea una contrasena para ingresar");
+          pass = scan.next();
+          if(pass <5){
+          }else
+          }catch(Exception e){
+            System.out.println("\nHubo un error. Ingrese sus datos de nuevo");
             
           }
-          System.out.println("Ingresa tu edad");
-          age = scan.nextInt();
-          System.out.println("Crea un nombre de usuario");
-          usuario = scan.next();
-          System.out.println("Crea una contrasena para ingresar");
-          pass = scan.next();
           System.out.println("\nYa se creo tu usuario. ¡Bienvenid@!");
 
 
