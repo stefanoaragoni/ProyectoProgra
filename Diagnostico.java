@@ -36,9 +36,11 @@ class Diagnostico{
     }
     else if (i==3){
       System.out.println("Leer este parrafo y responder las preguntas\nMartín es un pez.\nÉl es rojo y amarillo.\nLe gusta nadar.\nMartín puede nadar muy rápido\n");
-      System.out.println("¿Cual es de lo siguiente es verdadero \n1. El pez se llama Marlín y es de color rojo y amarillo.\n2.El pez le gusta nadar y nada lento.\n3.El pez se llama Martín y le gusta nadar.\n4.El ratón es muy tragón.");
+      System.out.println("¿Cual es de lo siguiente es verdadero \n1. El pez se llama Marlín y es de color rojo y amarillo.\n2.El pez le gusta nadar y nada lento.\n3.El pez se llama Martín y le gusta nadar.\n4.El pez es de color azul y amarillo y nada muy rápido.");
     }
     else if (i==4){
+      System.out.println("Leer este parrafo y responder las preguntas\nLa gata Quilla vive en un tejado muy soleado.\nTiene el pelo de color naranja y unos grandes ojos verdes que por la noche se vuelven amarillos.\nSus dientes son muy pequeños y tiene sus uñas siempre afiladas.");
+      System.out.println("¿Cual es de lo siguiente es verdadero \n1. La gata Quilla tiene pelo naranja y vive en un tejado.\n2.La gata Quilla tiene dientes muy grandes y sus uñas siempre afiladas.\n3.La gata CosQuilla tiene ojos verdes.\n4.El pez es de color azul y amarillo y nada muy rápido.");
     }
 
     return lec3;
