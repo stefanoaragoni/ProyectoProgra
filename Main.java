@@ -1,6 +1,6 @@
 /******************************************************************
 Main.java
-Autores: Stefano Aragoni, Rebecca Smith, Roberto Vallecillos
+Autores: Stefano Aragoni, Rebecca Smith, Roberto Vallecillos, Cayetano molina, Daniel Cabrera, Diego Ruiz
 Última modificación: 2020-08-30
 
 ******************************************************************/
@@ -104,7 +104,7 @@ public class Main {
 
 
         }else if (opcion == 3){
-           System.out.println("Gracias por usar TutoGuate, vuelve pronto!");
+           System.out.println("Gracias por usar TutoGuate, ¡vuelve pronto!");
 
         }else{
          System.out.println("Ingresa una opcion valida");

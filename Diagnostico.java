@@ -79,7 +79,7 @@ class Diagnostico{
       int num1 = rand.nextInt(10) +1;
       int num2 = rand.nextInt(10) +1;
       System.out.println("Pregunta 2:");
-      System.out.println("¿Cuánto es "+num1+"x"+num2+"?");
+      System.out.println("¿Cuánto es "+num1+"*"+num2+"?");
       num3 = num1*num2;
     }
     else if (i==2){
@@ -87,13 +87,25 @@ class Diagnostico{
       int num2 = rand.nextInt(10) +1;
       int num4 = rand.nextInt(10) +1;
       System.out.println("Pregunta 3:");
-      System.out.println("¿Cuánto es ("+num1+"+"+num2+")x"+num4+" ?");
+      System.out.println("¿Cuánto es ("+num1+"+"+num2+")*"+num4+" ?");
       num3 = ((num1+num2)*num4);
     }
     else if (i==3){
-
+      int num1 = rand.nextInt(5) +1;
+      int num2 = rand.nextInt(5) +1;
+      int num4 = rand.nextInt(5) +1;
+      System.out.println("Pregunta 4:");
+      System.out.println("¿Cuánto es ("+num1+"*"+num2+"*"+num4+" ?");
+      num3 = (num1*num2*num4);
     }
     else if (i==4){
+      int num1 = rand.nextInt(5) +1;
+      int num2 = rand.nextInt(5) +1;
+      int num4 = rand.nextInt(5) +1;
+      System.out.println("Pregunta 4:");
+      System.out.println("(Utilizando las reglas de PEMDAS) ¿Cuánto es ("+num1+"+"+num2+"*"+num4+" ?");
+      num3 = ((num2*num4)+num1);
+
     }
 
     return num3;
