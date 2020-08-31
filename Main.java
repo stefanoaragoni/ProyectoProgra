@@ -73,10 +73,19 @@ public class Main {
           
           System.out.println("\nCrea un nombre de usuario");
           usuario = scan.next();
-          System.out.println("\nCrea una contrasena para ingresar");
-          pass = scan.next();
-          if(pass <5){
-          }else
+
+          int jelly = 0;
+          while(jelly != 1){
+            System.out.println("\nCrea una contrasena con un minimo de 5 caracteres para ingresar");
+            pass = scan.next();
+            if(pass.length() > 5){
+              System.out.println("Contrasena valida");
+              jelly +=1;
+            }else{
+              System.out.println("Ingrese una contrasena valida");
+              
+            }
+          }
           }catch(Exception e){
             System.out.println("\nHubo un error. Ingrese sus datos de nuevo");
             
