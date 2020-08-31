@@ -24,6 +24,7 @@ public class Main {
       String user;
       String contra;
 
+      //TEST DE QUE LA CLASE DIAGNOSTICO FUNCIONE
       DTest.examenInicialLectura(0);
       int opcion1 = scan.nextInt();
       DTest.RespuestasLectura(opcion1);
