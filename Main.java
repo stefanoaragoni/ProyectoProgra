@@ -15,6 +15,7 @@ public class Main {
       Scanner scan = new Scanner(System.in);
       int opcion = 0;
       Diagnostico DTest = new Diagnostico();
+      ActLectura ALec = new ActLectura();
       String nombre;
       String apellido;
       String correo;
@@ -23,8 +24,14 @@ public class Main {
       String pass;
       String user;
       String contra;
+      int opcion2 = 0;
 
       //TEST DE QUE LA CLASE DIAGNOSTICO FUNCIONE
+      while(opcion2!=1){
+        ALec.ActividadesNivel1(1);
+        opcion2 = scan.nextInt();
+        ALec.setOpcion1(opcion2);
+      }  
       DTest.examenInicialLectura(0);
       int opcion1 = scan.nextInt();
       DTest.RespuestasLectura(opcion1);
