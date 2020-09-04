@@ -27,6 +27,7 @@ public class Main {
       int opcion2 = 0;
 
       //TEST DE QUE LA CLASE DIAGNOSTICO FUNCIONE
+      //Test para ver si funciona las actividades
       while(opcion2!=1){
         ALec.ActividadesNivel1(1);
         opcion2 = scan.nextInt();
