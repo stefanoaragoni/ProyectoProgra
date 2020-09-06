@@ -25,11 +25,15 @@ public class Main {
       String user;
       String contra;
       int opcion2 = 0;
+      
+      Almacenamiento alma = new Almacenamiento();
 
       //TEST DE QUE LA CLASE DIAGNOSTICO FUNCIONE
       //Test para ver si funciona las actividades
+
+      //NO SIRVE REVISEN GRAX <3
       while(opcion2!=1){
-        ALec.ActividadesNivel1(1);
+        //ALec.ActividadesNivel1(1);
         opcion2 = scan.nextInt();
         ALec.setOpcion1(opcion2);
       }  
@@ -49,9 +53,12 @@ public class Main {
           try{
           System.out.println("\nIngresa tu nombre");
           nombre = scan.next();
+
+          alma.agrenom(nombre);//agrega el nombre a un array
+          
           System.out.println("\nIngresa tu apellido");
           apellido= scan.next();
-      
+          alma.agreap(apellido);//agrega el apellido a un array
           
           int contador1 = 0;
           while (contador1 < 1){
@@ -64,6 +71,7 @@ public class Main {
             }
             else{
               contador1 = 1;
+              alma.agrema(correo);//agrega el correo a un array
             }
           }
 
@@ -79,27 +87,31 @@ public class Main {
               continue;
             }
           }
-          
+          alma.agreda(age);//agrega la edad a un array
           System.out.println("\nCrea un nombre de usuario");
-          usuario = scan.next();
-
+          usuario=scan.next();
+          
+          alma.agregar(usuario);//agrega el usuario a un array
           int jelly = 0;
           while(jelly != 1){
             System.out.println("\nCrea una contrasena con un minimo de 5 caracteres para ingresar");
-            pass = scan.next();
+            pass=scan.next();
             if(pass.length() > 5){
               System.out.println("Contrasena valida");
               jelly +=1;
+              
             }else{
               System.out.println("Ingrese una contrasena valida");
               
             }
+            alma.agregue(pass);//agrega la contra a un array
           }
           }catch(Exception e){
             System.out.println("\nHubo un error. Ingrese sus datos de nuevo");
             
           }
           System.out.println("\nYa se creo tu usuario. ¡Bienvenid@!");
+          
 
 
 

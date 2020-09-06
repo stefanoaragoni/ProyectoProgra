@@ -120,6 +120,8 @@ class ActLectura{
       System.out.println("2. Una palabra esdrújula es aquella que tiene la sílaba tónica en cualquier sílaba antes de la penúltima");
       System.out.println("3. Una palabra esdrújula es aquella que no tiene sílaba tónica");
       System.out.println("4. Una palabra esdrújula es aquella que tiene la sílaba tónica en la última sílaba");
+
+      l3 = 2;
     }
   }
 
