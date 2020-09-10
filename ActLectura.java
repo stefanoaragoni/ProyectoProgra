@@ -21,26 +21,36 @@ class ActLectura{
     System.out.println("4. Salir");
   }
 
-  //Menú del nivel 1 de lectura para que se muestre en el driver
+  //Menú del nivel 2 de lectura para que se muestre en el driver
   public void MenuNivel2(){
     System.out.println("Bienvenido a las actividades de lectura del nivel 1");
     System.out.println("Para empezar se dará la definición de una sílaba tónica");
     System.out.println("La sílaba tónica, es aquella sílaba que se pronuncia más fuerte o con mayor acentuación en una palabra");
     System.out.println("Dicho esto, dependiendo en qué sílaba caiga la sílaba tónica, las palabras de dividen es agudas, graves y esdrújulas");
     System.out.println("Por favor eliga lo que quiere resolver");
-    System.out.println("1. Palabras agudas");
+    System.out.println("1. Palabras Agudas");
     System.out.println("2. Palabras Graves");
     System.out.println("3. Palabras Esdrújulas");
     System.out.println("4. Salir");
   }
 
-  //Menú del nivel 1 de lectura para que se muestre en el driver
+  //Menú del nivel 3 de lectura para que se muestre en el driver
   public void MenuNivel3(){
     System.out.println("Bienvenido a las actividades de lectura del nivel 1");
     System.out.println("Por favor eliga lo que quiere resolver");
     System.out.println("1. El uso de la coma");
     System.out.println("2. El uso del punto");
     System.out.println("3. El uso de los signos de exclamación y admiración");
+    System.out.println("4. Salir");
+  }
+
+    //Menú del nivel 4 de lectura para que se muestre en el driver
+  public void MenuNivel4(){
+    System.out.println("Bienvenido a las actividades de lectura del nivel 4");
+    System.out.println("Por favor eliga lo que quiere resolver");
+    System.out.println("1. ");
+    System.out.println("2. ");
+    System.out.println("3. ");
     System.out.println("4. Salir");
   }
 
@@ -127,6 +137,30 @@ class ActLectura{
 
   public void Nivel3(int opcion){
 
+  }
+
+  public void Nivel4(int opcion){
+    if (opcion == 1){
+    
+    
+    //Respuesta 
+      l1 = 1;
+    }
+    else if(opcion==2){
+
+      l2 = 1;
+    }
+    
+    else if(opcion==3){
+
+
+
+      l3 = 1;
+    }
+  }
+
+  public void correctas(){
+    
   }
 
 
