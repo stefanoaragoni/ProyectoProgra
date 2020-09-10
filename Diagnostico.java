@@ -6,21 +6,24 @@ Autores: Stefano Aragoni, Rebecca Smith, Roberto Vallecillos
 ******************************************************************/
 
 import java.util.Random;
+import java.util.Scanner;
 
 class Diagnostico{
   Random rand = new Random();
-  int correctas, preguntas, num3, lec3;
+  Scanner scan = new Scanner(System.in);
+  int correctas, preguntas, num3, lec3, correctasL, nivel;
 
   public Diagnostico(){
+    nivel = 0;
     preguntas = 10; 
     correctas = 0; 
+    correctasL = 0;
     lec3 = 0;
     num3 = 0;
   }
 
-  public int examenInicialLectura(int  i){
-    System.out.println("--Seccion de Lectura--"); 
-    System.out.println("\nLeer los siguientes incisos y responder las preguntas correspondientes. \n"); 
+  public void examenInicialLectura(int  i){
+    
     if (i==0){
       System.out.println("Pregunta 1:");
       System.out.println("Mi gallina es muy bonita.\nYo le hecho siempre de comer.\nUn día se perdió y mi padre fue a buscarla.\nEstaba poniendo un huevo\n");
@@ -29,7 +32,7 @@ class Diagnostico{
     }
     else if (i==1){
       System.out.println("Pregunta 2:");
-      System.out.println("María está feliz.\nElla esta esperando a Santa.\nMaría de le dejará galletas y leches.\n");
+      System.out.println("María está feliz.\nElla esta esperando a Santa.\nMaría le dejará galletas y leches.\n");
       System.out.println("¿A quién está esperando María. \n1.A su papá.\n2.A su mamá\n3.A su perrita\n4.A Santa Claus.");
       lec3 = 4;
     }
@@ -42,7 +45,7 @@ class Diagnostico{
     else if (i==3){
       System.out.println("Pregunta 4:");
       System.out.println("Martín es un pez.\nÉl es rojo y amarillo.\nLe gusta nadar.\nMartín puede nadar muy rápido\n");
-      System.out.println("¿Cual es de lo siguiente es verdadero \n1. El pez se llama Marlín y es de color rojo y amarillo.\n2.El pez le gusta nadar y nada lento.\n3.El pez se llama Martín y le gusta nadar.\n4.El pez es de color azul y amarillo y nada muy rápido.");
+      System.out.println("¿Cual es de lo siguiente es verdadero \n1. El pez se llama Marlín y es de color rojo.\n2.El pez le gusta nadar y nada lento.\n3.El pez se llama Martín y le gusta nadar.\n4.El pez es de color azul y amarillo y nada muy rápido.");
       lec3 = 3;
     }
     else if (i==4){
@@ -51,23 +54,21 @@ class Diagnostico{
       System.out.println("¿Cual es de lo siguiente es verdadero \n1. La gata Quilla tiene pelo naranja y vive en un tejado.\n2.La gata Quilla tiene dientes muy grandes y sus uñas siempre afiladas.\n3.La gata CosQuilla tiene ojos verdes y uñas afiladas.\n4.La gata Cosquilla tiene el pelo color negro y viven en un tejado soleado.");
       lec3 = 1;
     }
-
-    return lec3;
   }
   
-    public void RespuestasLectura(int b){
+    public void RespuestasLectura(){
+      int b = scan.nextInt();
       if (b == lec3){
         System.out.println("¡Correcto! Muy bien hecho.\n\n");
-        correctas++;
+        correctasL++;
       }
       else {
         System.out.println("Eh. Incorrecto. La respuesta correcta era: "+ lec3+"\n\n");
      }
     }
 
-  public int examenInicialMate(int i){
-    System.out.println("--Sección de Matemática--"); 
-    System.out.println("\nLeer los siguientes incisos y responder las preguntas correspondientes. \n");
+  public void examenInicialMate(int i){
+    
     if (i==0){
       int num1 = rand.nextInt(25) +1;
       int num2 = rand.nextInt(25) +1;
@@ -85,7 +86,7 @@ class Diagnostico{
     else if (i==2){
       int num1 = rand.nextInt(10) +1;
       int num2 = rand.nextInt(10) +1;
-      int num4 = rand.nextInt(10) +1;
+      int num4 = rand.nextInt(5) +2;
       System.out.println("Pregunta 3:");
       System.out.println("¿Cuánto es ("+num1+"+"+num2+")*"+num4+" ?");
       num3 = ((num1+num2)*num4);
@@ -93,25 +94,26 @@ class Diagnostico{
     else if (i==3){
       int num1 = rand.nextInt(5) +1;
       int num2 = rand.nextInt(5) +1;
-      int num4 = rand.nextInt(5) +1;
+      int num4 = rand.nextInt(5) +2;
       System.out.println("Pregunta 4:");
-      System.out.println("¿Cuánto es ("+num1+"*"+num2+"*"+num4+" ?");
+      System.out.println("¿Cuánto es ("+num1+"*"+num2+"*"+num4+") ?");
       num3 = (num1*num2*num4);
     }
     else if (i==4){
       int num1 = rand.nextInt(5) +1;
       int num2 = rand.nextInt(5) +1;
-      int num4 = rand.nextInt(5) +1;
-      System.out.println("Pregunta 4:");
-      System.out.println("(Utilizando las reglas de PEMDAS) ¿Cuánto es ("+num1+"+"+num2+"*"+num4+" ?");
+      int num4 = rand.nextInt(10) +1;
+      System.out.println("Pregunta 5:");
+      System.out.println("(Utilizando las reglas de PEMDAS) ¿Cuánto es ("+num1+"+"+num2+"*"+num4+") ?");
       num3 = ((num2*num4)+num1);
 
     }
 
-    return num3;
+
   }
 
-   public void RespuestasMate(int b){
+   public void RespuestasMate(){
+    int b = scan.nextInt();
     if (b == num3){
       System.out.println("¡Correcto! Muy bien hecho.\n\n");
       correctas++;
@@ -121,5 +123,9 @@ class Diagnostico{
     }
   }
 
+  public int getNivel(){
+    nivel = 9;
+    return nivel;
+  }
 
 }
