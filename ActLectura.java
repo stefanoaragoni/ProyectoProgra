@@ -161,6 +161,7 @@ class ActLectura{
   }
 
   public void correctas(){
+
     System.out.println("Muy Bien!");
     correctas++;
   }

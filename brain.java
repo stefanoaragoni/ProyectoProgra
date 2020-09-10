@@ -20,11 +20,11 @@ class brain{
   String contra = "";
   int opcion2 = 0;
 
-  public brain(){
+  public brain(){}
 
-  }
 
   public usuario newUsu(){
+
     System.out.println("Hola bienvenid@, necesitamos algunos datos para comenzar");
     try{
     System.out.println("\nIngresa tu nombre");
@@ -147,6 +147,7 @@ class brain{
 
       int nivelInt = DTest.getNivel();
 
+
       usuario Usu1 = new usuario(nombre, apellido, correo, age, usuario, pass, nivelInt);
       
       Almacen.agregar1(Usu1);
@@ -184,9 +185,7 @@ class brain{
         System.out.println("");
       }
     }
-
-  
-  return Log;
-  }
+    return Log;
+    }
 
 }

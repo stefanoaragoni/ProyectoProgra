@@ -11,6 +11,7 @@ import java.util.Scanner;
 class Diagnostico{
   Random rand = new Random();
   Scanner scan = new Scanner(System.in);
+
   int correctas, preguntas, num3, lec3, correctasL, nivel;
 
   public Diagnostico(){

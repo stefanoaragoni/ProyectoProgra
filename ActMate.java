@@ -6,7 +6,11 @@ class ActMate{
    //Nivel es para que dependiendo de esta variable se deplieguen actividades correspondientes.
    //Area es para definir si se trabajará en matemáticas o en lecturas. */
    int preguntas, correctas, incorrectas, nivel, opcion;
+
    int R;
+
+   int R1, R2, R3;
+
    String area;
 
   public ActMate() {
@@ -83,8 +87,11 @@ class ActMate{
       System.out.println("2. 65");
       System.out.println("3. 60");
       System.out.println("4. 55");
-      
+
       R = 3;
+
+      R1 = 3;
+
 
 
     } else if (opcion == 2){
@@ -115,7 +122,11 @@ class ActMate{
       System.out.println("3. 20");
       System.out.println("4. 05");
 
+
       R = 2;
+
+      R2 = 2;
+
 
     } else if (opcion == 3){
       //Suma y Resta
@@ -131,7 +142,11 @@ class ActMate{
       System.out.println("3. 45");
       System.out.println("4. 85");
 
+
       R = 4;
+
+      R3 = 4;
+
     } else {
       System.out.println("Número no válido. Por favor ingrese un número entre 1 y 3.");
     }
@@ -179,7 +194,11 @@ class ActMate{
       System.out.println("3. 1320");
       System.out.println("4. 152");
       
+
       R = 3;
+
+      R1 = 3;
+
 
 
     } else if (opcion == 2){
@@ -210,7 +229,11 @@ class ActMate{
       System.out.println("3. 20");
       System.out.println("4. 05");
 
+
       R = 2;
+
+      R2 = 2;
+
 
     } else if (opcion == 3){
       //Multiplicar y Dividir
@@ -226,7 +249,11 @@ class ActMate{
       System.out.println("3. 45");
       System.out.println("4. 85");
 
+
       R = 4;
+
+      R3 = 4;
+
     } else {
       System.out.println("Número no válido. Por favor ingrese un número entre 1 y 3.");
     }
