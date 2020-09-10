@@ -62,8 +62,6 @@ public class Main {
         System.out.println("Ingresa una opcion valida");
       }
       while(seguro5==0){
-
-        
       }
     }
   }
