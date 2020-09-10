@@ -20,11 +20,11 @@ class brain{
   String contra = "";
   int opcion2 = 0;
 
-  public brain(){
+  public brain(){}
 
-  }
 
-  public void newUsu(){
+  public usuario newUsu(){
+
     System.out.println("Hola bienvenid@, necesitamos algunos datos para comenzar");
     try{
     System.out.println("\nIngresa tu nombre");
@@ -147,12 +147,45 @@ class brain{
 
       int nivelInt = DTest.getNivel();
 
-      usuario Usu1 = new usuario(nombre, apellido, correo, age, usuario, pass, user, contra, nivelInt);
-      
-      almacen.agregar(usu1);
 
+      usuario Usu1 = new usuario(nombre, apellido, correo, age, usuario, pass, nivelInt);
+      
+      Almacen.agregar1(Usu1);
+
+      return Usu1;
   }
 
+  public usuario logIn(){
+    int seguro5 = 1;
+    usuario Log = null;
+    System.out.println("\nIngresa tu usuario");
+    user = scan.next();
+    if(Almacen.obtener(user) != null){
+      Log = Almacen.obtener(user);
+      System.out.println("Ingresa tu contrasena");
+      contra = scan.next();
+      if(contra == Log.getContra()){
+          System.out.println("bienvenid@...");
+          seguro5 = 0;
+      }else{
+        System.out.println("Contraseña incorrecta...\n");
+        try {
+          TimeUnit.SECONDS.sleep(2);
+        }catch (InterruptedException e) {
+          System.out.println("");
+        }
+      }
 
+    }
+    else{
+      System.out.println("Este usuario no existe...\n");
+      try {
+        TimeUnit.SECONDS.sleep(2);
+      } catch (InterruptedException e) {
+        System.out.println("");
+      }
+    }
+    return Log;
+    }
 
 }

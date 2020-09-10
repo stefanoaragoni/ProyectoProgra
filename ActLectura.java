@@ -4,6 +4,7 @@ class ActLectura{
   int l1;
   int l2;
   int l3;
+  int correctas;
 
   public ActLectura(){
 
@@ -160,7 +161,9 @@ class ActLectura{
   }
 
   public void correctas(){
-    
+
+    System.out.println("Muy Bien!");
+    correctas++;
   }
 
 

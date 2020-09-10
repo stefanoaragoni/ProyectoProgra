@@ -18,14 +18,18 @@ class almacen{
 
   public boolean agregar(String a){
     boolean completado = false;
-    if (obtener(a) == ""){
+
+    if (obtenerUsu(a) == ""){
+
 			storeList.add(a);
 			completado = true;
 		}
     return completado;
   }
 
-	public String obtener(String a){
+
+	public String obtenerUsu(String a){
+
 		String resultado = "";
 		String temp;
 		for (int i = 0; i < storeList.size(); i++){
@@ -46,7 +50,9 @@ class almacen{
 		return store.size();
 	}
 	
-	public int agregar(usuario a){
+
+	public int agregar1(usuario a){
+
 		int resultado = -1;
 		if (obtener(a) == null){
 			store.add(a);

@@ -11,9 +11,11 @@ import java.util.Scanner;
 class Diagnostico{
   Random rand = new Random();
   Scanner scan = new Scanner(System.in);
-  int correctas, preguntas, num3, lec3, correctasL;
+
+  int correctas, preguntas, num3, lec3, correctasL, nivel;
 
   public Diagnostico(){
+    nivel = 0;
     preguntas = 10; 
     correctas = 0; 
     correctasL = 0;
@@ -122,5 +124,9 @@ class Diagnostico{
     }
   }
 
+  public int getNivel(){
+    nivel = 9;
+    return nivel;
+  }
 
 }

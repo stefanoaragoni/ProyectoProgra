@@ -7,20 +7,19 @@ class usuario{
       String usuario;
       String pass;
       String user;
-      String contra;
+
       int nivel;
 
-  public usuario(String nombre, String apellido, String correo, int age, String usuario, String pass, String user, String contra){
+  public usuario(String nombre, String apellido, String correo, int age, String usuario, String pass, int nivel){
     this.nombre = nombre;
     this.apellido = apellido;
     this.correo = correo;
     this.age = age;
     this.usuario = usuario;
     this.pass = pass;
-    this.user = user;
-    this.contra = contra;
     this.nivel = nivel;
     nivel = 0;
+
   }
 
   public void nivelUpgrade(int a){
@@ -32,7 +31,8 @@ class usuario{
   }
 
   public String getContra(){
-      return contra;
+
+      return pass;
   }
 
   public String getNombre(){
