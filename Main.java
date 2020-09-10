@@ -11,6 +11,7 @@ import java.util.Random;
 import java.io.*; 
 
 public class Main {
+
   public static void main(String[] args) {
 
     Scanner scan = new Scanner(System.in);
@@ -60,10 +61,9 @@ public class Main {
       else{
         System.out.println("Ingresa una opcion valida");
       }
-    
+      while(seguro5==0){
 
-      while(seguro5 == 0){
-
+        
       }
     }
   }
