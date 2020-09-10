@@ -12,6 +12,7 @@ import java.io.*;
 
 public class Main {
 
+<<<<<<< HEAD
   public static void main(String[] args) {
 
     Scanner scan = new Scanner(System.in);
@@ -64,5 +65,6 @@ public class Main {
       while(seguro5==0){
       }
     }
+
   }
 }
