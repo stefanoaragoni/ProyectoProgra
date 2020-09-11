@@ -97,9 +97,9 @@ class brain{
 
     try {
       TimeUnit.SECONDS.sleep(4);
-      } catch (InterruptedException e) {
+    } catch (InterruptedException e) {
       System.out.println("");
-      }
+    }
 
     System.out.println("--Sección de Matemática--");
     System.out.println("\nLeer los siguientes incisos y responder las preguntas correspondientes.\n");
@@ -117,13 +117,19 @@ class brain{
     }
 
     try {
-      TimeUnit.SECONDS.sleep(2);
-      } catch (InterruptedException e) {
+      TimeUnit.SECONDS.sleep(1);
+    } catch (InterruptedException e) {
       System.out.println("");
-      }
+    }
 
     System.out.println("--Seccion de Lectura--"); 
       System.out.println("\nLeer los siguientes incisos y responder las preguntas correspondientes. \n"); 
+
+    try {
+      TimeUnit.SECONDS.sleep(3);
+    } catch (InterruptedException e) {
+      System.out.println("");
+    }
 
     seguro = 0;
     while(seguro != 5){
@@ -146,9 +152,10 @@ class brain{
       System.out.println("¡Felicidades! Ya completaste el diagnóstico.\nTus resultados son los siguientes:");
 
       int nivelInt = DTest.getNivel();
+      int nivelInt2 = DTest.getNivel2();
 
 
-      usuario Usu1 = new usuario(nombre, apellido, correo, age, usuario, pass, nivelInt);
+      usuario Usu1 = new usuario(nombre, apellido, correo, age, usuario, pass, nivelInt, nivelInt2);
       
       Almacen.agregar1(Usu1);
 
@@ -156,36 +163,43 @@ class brain{
   }
 
   public usuario logIn(){
-    int seguro5 = 1;
     usuario Log = null;
     System.out.println("\nIngresa tu usuario");
     user = scan.next();
-    if(Almacen.obtener(user) != null){
-      Log = Almacen.obtener(user);
-      System.out.println("Ingresa tu contrasena");
-      contra = scan.next();
-      if(contra == Log.getContra()){
-          System.out.println("bienvenid@...");
-          seguro5 = 0;
-      }else{
-        System.out.println("Contraseña incorrecta...\n");
-        try {
-          TimeUnit.SECONDS.sleep(2);
-        }catch (InterruptedException e) {
-          System.out.println("");
-        }
-      }
 
+    if(Almacen.agregar(user) == false){
+      Log = Almacen.obtener4(user);
     }
     else{
       System.out.println("Este usuario no existe...\n");
       try {
-        TimeUnit.SECONDS.sleep(2);
+        TimeUnit.SECONDS.sleep(1);
       } catch (InterruptedException e) {
         System.out.println("");
       }
     }
     return Log;
+  }
+
+  public boolean logIn2(usuario Log){
+    boolean posible = false;
+    System.out.println("Ingresa tu contrasena");
+
+    contra = scan.next();
+    if((contra).equals(Log.getContra())){
+      System.out.println("\nbienvenid@...");
+      posible = true;
+    }else{
+      System.out.println("Contraseña incorrecta...\n");
+      try {
+        TimeUnit.SECONDS.sleep(2);
+      }catch (InterruptedException e) {
+        System.out.println("");
+      }
     }
+    return posible;
+    
+
+  }
 
 }

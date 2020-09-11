@@ -87,19 +87,18 @@ class almacen{
 		return resultado;
 	}
 	
-	public usuario obtener(String nombreNuevo){
+	public usuario obtener4(String nombreNuevo){
 		usuario resultado = null;
 		usuario temp;
 		for (int i = 0; i < store.size(); i++){
-			temp = store.get(i);
-			if (nombreNuevo == (temp.getNombre())){
+			temp = store.get(0);
+			if (nombreNuevo.equals(temp.getNombre())){
 				return temp;
 			}
 		}
 		
 		return resultado;
 	}
-	
 	
 	public int cantidad(){
 		return store.size();

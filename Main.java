@@ -11,15 +11,18 @@ import java.util.Random;
 import java.io.*; 
 
 public class Main {
+
+
   public static void main(String[] args) {
 
     Scanner scan = new Scanner(System.in);
 
     Diagnostico DTest = new Diagnostico();
     ActLectura ALec = new ActLectura();
+    ActMate AMate = new ActMate();
     brain Brain = new brain();
 
-    usuario UsuarioActual;
+    usuario UsuarioActual = null;
 
     int opcion = 0;
     String nombre = "";
@@ -32,8 +35,9 @@ public class Main {
     String contra = "";
     int opcion2 = 0;
 
+
     while(opcion != 3 ){
-      System.out.println("¡Bienvenid@ a TutoGuate! Elige una opcion");
+      System.out.println("\n¡Bienvenid@ a TutoGuate! Elige una opcion");
       System.out.println("1. Nuevo usuario");
       System.out.println("2. Iniciar sesion");
       System.out.println("3. Salir");
@@ -47,24 +51,56 @@ public class Main {
         
       }
       else if(opcion == 2){
-          UsuarioActual = Brain.logIn();
-          if(UsuarioActual != null){
+        UsuarioActual = Brain.logIn();
+        if(UsuarioActual != null){
+          boolean prueba = Brain.logIn2(UsuarioActual);
+          if(prueba){
             seguro5 = 0;
+            System.out.println("\nCargando...\n\n");
           }
           
-      }
-      else if(opcion == 3){
+        } 
+      }else if(opcion == 3){
 
           System.out.println("Gracias por usar TutoGuate, ¡vuelve pronto!");
       }
       else{
         System.out.println("Ingresa una opcion valida");
       }
-    
+      while(seguro5==0){
+        try {
+          TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+           System.out.println("");
+         }
 
-      while(seguro5 == 0){
+        System.out.println("--PREGUNTAS DE MATEMATICA--");
+
+        try {
+          TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+           System.out.println("");
+         }
+
+        int levelMate = UsuarioActual.getNivelMat();
+        AMate.MenuNivel(levelMate);
+
+        try {
+          TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+           System.out.println("");
+        }
+
+         System.out.println("--PREGUNTAS DE LECTURA--");
+        int levelLec = UsuarioActual.getNivelLec();
+        ALec.MenuNivel(levelLec);
+
+        seguro5 = 1;
+
+
 
       }
     }
+
   }
 }

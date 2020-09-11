@@ -6,28 +6,36 @@ class usuario{
       int age = 0;
       String usuario;
       String pass;
-      String user;
 
-      int nivel;
+      int nivelLec;
+      int nivelMat;
 
-  public usuario(String nombre, String apellido, String correo, int age, String usuario, String pass, int nivel){
+  public usuario(String nombre, String apellido, String correo, int age, String usuario, String pass, int nivelLec, int nivelMat){
     this.nombre = nombre;
     this.apellido = apellido;
     this.correo = correo;
     this.age = age;
     this.usuario = usuario;
     this.pass = pass;
-    this.nivel = nivel;
-    nivel = 0;
+    this.nivelLec = nivelLec;
+    this.nivelMat = nivelMat;
 
   }
 
-  public void nivelUpgrade(int a){
-    nivel = a;
+  public void nivelUpgradeLec(int a){
+    nivelLec = a;
   }
 
-  public int getNivel(){
-      return nivel;
+  public void nivelUpgradeMat(int a){
+    nivelMat = a;
+  }
+
+  public int getNivelLec(){
+      return nivelLec;
+  }
+
+  public int getNivelMat(){
+      return nivelMat;
   }
 
   public String getContra(){
@@ -36,7 +44,7 @@ class usuario{
   }
 
   public String getNombre(){
-    return user;
+    return usuario;
   }
 
 

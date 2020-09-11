@@ -125,7 +125,32 @@ class Diagnostico{
   }
 
   public int getNivel(){
-    nivel = 9;
+    nivel = 0;
+    if(correctasL <3){
+      nivel = 1;
+    }
+    if(correctasL == 3){
+      nivel = 2;
+    }
+    if(correctasL > 3){
+      nivel = 3;
+    }
+
+    return nivel;
+  }
+
+  public int getNivel2(){
+    nivel = 0;
+    if(correctas <3){
+      nivel = 1;
+    }
+    if(correctas == 3){
+      nivel = 2;
+    }
+    if(correctas > 3){
+      nivel = 3;
+    }
+
     return nivel;
   }
 
