@@ -1,38 +1,51 @@
+/******************************************************************
+brain.java
+Autores: Stefano Aragoni, Rebecca Smith, Roberto Vallecillos, Cayetano molina, Daniel Cabrera, Diego Ruiz
+Última modificación: 2020-09-11
+
+******************************************************************/
+
+//se importan las utilidades de java
 import java.util.concurrent.TimeUnit;
 import java.util.Scanner;
 import java.util.Random;
 import java.io.*; 
 
+//se crea la clase
 class brain{
-
+  //se instancias las clases de las utilidades de java
   Scanner scan = new Scanner(System.in);
   Diagnostico DTest = new Diagnostico();
   ActLectura ALec = new ActLectura();
   almacen Almacen = new almacen();
 
-  String nombre = "";
-  String apellido = "";
-  String correo = "";
-  int age = 0;
-  String usuario = "";
-  String pass = "";
-  String user = "";
-  String contra = "";
-  int opcion2 = 0;
+  //se instancian los atributos de las clases. 
+  private String nombre = "";
+  private String apellido = "";
+  private String correo = "";
+  private int age = 0;
+  private String usuario = "";
+  private String pass = "";
+  private String user = "";
+  private String contra = "";
+  private int opcion2 = 0;
 
+  //constructor.
   public brain(){}
 
-
+  //metodo que crea un nuveo usuario y de paso le hace el examen de diagnóstico 
   public usuario newUsu(){
 
     System.out.println("Hola bienvenid@, necesitamos algunos datos para comenzar");
     try{
+    //se pide el nombre
     System.out.println("\nIngresa tu nombre");
     nombre = scan.next();
-
+    //se pide el apellido
     System.out.println("\nIngresa tu apellido");
     apellido= scan.next();
 
+    //se pide el correo
     int contador1 = 0;
     while (contador1 < 1){
       System.out.println("\nIngresa tu correo");
@@ -47,6 +60,7 @@ class brain{
       }
     }
 
+    //se pide la edad del usuario
     System.out.println("\nIngresa tu edad en numeros");
     int bean = 0;
     while(bean != 7){
@@ -60,6 +74,7 @@ class brain{
       }
     }
     
+    //se pide el nombre de usuario
     int seguro1 = 0;
     while(seguro1 != 1){
       System.out.println("\nCrea un nombre de usuario");
@@ -71,10 +86,10 @@ class brain{
         System.out.println("Este usuario ya existe. Intente de nuevo.");
       }
     }
-
+    //se pide una conrtase;a
     int jelly = 0;
     while(jelly != 1){
-      System.out.println("\nCrea una contrasena con un minimo de 5 caracteres para ingresar");
+      System.out.println("\nCrea una contrasena con un minimo de 6 caracteres para ingresar");
       pass=scan.next();
       if(pass.length() > 5){
         System.out.println("Contrasena valida");
@@ -101,6 +116,7 @@ class brain{
       System.out.println("");
     }
 
+    //se inicia la parte de mate del examen de diagnostico
     System.out.println("--Sección de Matemática--");
     System.out.println("\nLeer los siguientes incisos y responder las preguntas correspondientes.\n");
 
@@ -122,6 +138,7 @@ class brain{
       System.out.println("");
     }
 
+    //se inicia la parte de lectura dle examen de diagnostica. 
     System.out.println("--Seccion de Lectura--"); 
       System.out.println("\nLeer los siguientes incisos y responder las preguntas correspondientes. \n"); 
 
@@ -143,6 +160,7 @@ class brain{
         }
     }
 
+
       try {
       TimeUnit.SECONDS.sleep(2);
       } catch (InterruptedException e) {
@@ -151,10 +169,22 @@ class brain{
 
       System.out.println("¡Felicidades! Ya completaste el diagnóstico.\nTus resultados son los siguientes:");
 
+      
+      //se se regresa los niveles de lectura y mate
       int nivelInt = DTest.getNivel();
       int nivelInt2 = DTest.getNivel2();
 
+      System.out.println("Matemática: Nivel"+nivelInt2);
+      System.out.println("Lectura: Nivel"+nivelInt);
+      System.out.println("\n\n");
 
+      try {
+        TimeUnit.SECONDS.sleep(2);
+      } catch (InterruptedException e) {
+        System.out.println("");
+      }
+
+      //se crea una instancia de usuario
       usuario Usu1 = new usuario(nombre, apellido, correo, age, usuario, pass, nivelInt, nivelInt2);
       
       Almacen.agregar1(Usu1);

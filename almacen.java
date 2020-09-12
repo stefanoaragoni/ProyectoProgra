@@ -1,22 +1,23 @@
 /******************************************************************
-Almacen.java
-Autor: Stefano Alberto Aragoni
-Última modificación: 2020-08-4
+almacen.java
+Autores: Stefano Aragoni, Rebecca Smith, Roberto Vallecillos, Cayetano molina, Daniel Cabrera, Diego Ruiz
+Última modificación: 2020-09-11
 
 ******************************************************************/
 
 import java.util.ArrayList;
 
 class almacen{
+  //Se crean arraylists
   private ArrayList<String> storeList;
 	private ArrayList<usuario> store;
 	
-	public almacen(){
+	public almacen(){//metodo para llamar listas nuevas
 		store = new ArrayList<usuario>();
     storeList = new ArrayList<String>();
 	}
 
-  public boolean agregar(String a){
+  public boolean agregar(String a){//se guarda a los usuarios en la lista
     boolean completado = false;
 
     if (obtenerUsu(a) == ""){
@@ -28,7 +29,7 @@ class almacen{
   }
 
 
-	public String obtenerUsu(String a){
+	public String obtenerUsu(String a){// se obtiene al usuario
 
 		String resultado = "";
 		String temp;
@@ -41,16 +42,7 @@ class almacen{
 		
 		return resultado;
 	}
-
-
-
 	
-	public int limpiar(){
-		store.clear();
-		return store.size();
-	}
-	
-
 	public int agregar1(usuario a){
 
 		int resultado = -1;
@@ -61,7 +53,7 @@ class almacen{
 		return resultado;
 	}
 
-	public int quitar(usuario a){
+	public int quitar(usuario a){//borra usuarios de la lista
 		usuario temp;
 		for (int i = 0; i < store.size(); i++){
 			temp = store.get(i);
@@ -86,7 +78,7 @@ class almacen{
 		
 		return resultado;
 	}
-	
+	//
 	public usuario obtener4(String nombreNuevo){
 		usuario resultado = null;
 		usuario temp;
@@ -99,8 +91,5 @@ class almacen{
 		
 		return resultado;
 	}
-	
-	public int cantidad(){
-		return store.size();
-	}
+
 }

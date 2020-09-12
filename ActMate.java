@@ -1,28 +1,32 @@
+/******************************************************************
+ActMate.java
+Autores: Stefano Aragoni, Rebecca Smith, Roberto Vallecillos, Cayetano molina, Daniel Cabrera, Diego Ruiz
+Última modificación: 2020-09-11
+
+******************************************************************/
+
+//se importan las utilidades de java
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.Scanner;
 
+//crea la clase
 class ActMate{
+  //se instancian las clases de utilidades de java
   Random rand = new Random();
-  //Preguntas determina el número de preguntas de la Actividades.
-  //Correctas e incorrectas para clasificar las respuestas de los usuarios.
-  //Nivel es para que dependiendo de esta variable se deplieguen actividades correspondientes.
-  //Area es para definir si se trabajará en matemáticas o en lecturas. */
-  int preguntas, correctas, nivel;
 
-  int R;
+  private int correctas, opcion, R;
   
   Scanner scan = new Scanner(System.in);
 
-  String area;
-
+  //constructor
   public ActMate() {
-    preguntas = 10;
     correctas = 0;
-    nivel = 1;
   }
 
+  //metodo que presenta el menu de las posibles actividades a realizar dependiendo del nivel
   public void MenuNivel(int a){
+    //menu 1
     if(a == 1){
       System.out.println("Bienvenido a las actividades de matemática del nivel 1");
       System.out.println("Elija el ejecicio que desea de realizar:");
@@ -33,7 +37,7 @@ class ActMate{
       int opcion1 = scan.nextInt();
       Nivel1(opcion1);
       }
-
+    //menu 2
     if(a == 2) {
       System.out.println("Bienvenido a las actividades de matemática del nivel 2");
       System.out.println("Elija el ejecicio que desea de realizar:");
@@ -44,7 +48,7 @@ class ActMate{
       int opcion1 = scan.nextInt();
       Nivel2(opcion1);
     }
-
+    //menu 3
     if(a == 3) {
       System.out.println("Bienvenido a las actividades de matemática del nivel 3");
       System.out.println("Elija el ejecicio que desea de realizar:");
@@ -59,11 +63,11 @@ class ActMate{
     
   }
 
-  //Actividades matemáticas 1
+  //metodo que instancia las preguntas del nivel 1
   public void Nivel1(int opcion){
     if (opcion == 1){
       //Sumar
-      System.out.println("1, 2, 3 , 4, 5...");
+      System.out.println("\n1, 2, 3 , 4, 5...");
       System.out.println("Los números son muy útiles para realizar tareas cotidianas.");
       System.out.println("Por eso es MUY IMPORTANTE que aprendamos a manejar bien estos.");
       System.out.println("Un ejemplo sencillo de esto es lo siguiente: ");
@@ -97,7 +101,7 @@ class ActMate{
 
     } else if (opcion == 2){
       //Restar
-      System.out.println("Restar es una operación facil de hacer.");
+      System.out.println("\nRestar es una operación facil de hacer.");
       System.out.println("Si tienes 3 monedas y le regalas una a Juanito te quedarán 2 monedas.");
       System.out.println("Si tienes un billete de Q10.00 y te compras algo de Q5.00 te quedarán Q5.00 .");
       System.out.println("Lo importantes para aprender a restar es el concepto de PRESTAR ");
@@ -129,7 +133,7 @@ class ActMate{
 
     } else if (opcion == 3){
       //Suma y Resta
-      System.out.println("En los módulos anteriores hemos repasado los conceptos básicos de suma y de resta.");
+      System.out.println("\nEn los módulos anteriores hemos repasado los conceptos básicos de suma y de resta.");
       System.out.println("Ahora haremos la prueba con algunos ejercicios combinados.");
       System.out.println("Si tenemos 7 manzanas y nos regalan 2, pero luego perdemos 4. ¿Cuántas manzanas nos quedan?");
       System.out.println("Las operaciones se hacen de izquierda a derecha.");
@@ -158,7 +162,7 @@ class ActMate{
   public void Nivel2(int opcion){
     if (opcion == 1){
       //Multiplicar
-      System.out.println("Llegamos a la parte de multiplicar");
+      System.out.println("\nLlegamos a la parte de multiplicar");
       System.out.println("Multiplicar es sumar un mismo número por x veces.");
       System.out.println("Para esta parte es fundamental que te repases las tablas de multiplicar.");
       System.out.println("Puede que tome un par de chanclazos pero las aprenderas.");
@@ -203,7 +207,7 @@ class ActMate{
 
     } else if (opcion == 2){
       //Dividir
-      System.out.println("Para dividir tienes el que colocar el número que quieres dividir dentro de una caja.");
+      System.out.println("\nPara dividir tienes el que colocar el número que quieres dividir dentro de una caja.");
       System.out.println("Supongamos que quieres dividir 5 dentro de 2");
       System.out.println("Se coloca el 5 dentro de la caja y el 2 afuera. 2|5 .");
       System.out.println("Ahora tenemos que multiplicar.");
@@ -239,7 +243,7 @@ class ActMate{
 
     } else if (opcion == 3){
       //Multiplicar y Dividir
-      System.out.println("Muy bien. Ahora que sabemos como multiplicar y dividir vamos a porbar un ejercicio que combine ambos.");
+      System.out.println("\nMuy bien. Ahora que sabemos como multiplicar y dividir vamos a porbar un ejercicio que combine ambos.");
       System.out.println("Es importante que practiques varios ejercicios antes.");
       System.out.println("Nota: Es importante que en una operación primero se tienen que hacer las multiplicaciones y divisiones, luego se hacen las sumas y restas.");
       System.out.println("Ahora sí, veamos un ejemplo.");
@@ -269,7 +273,7 @@ class ActMate{
   public void Nivel3(int opcion){
     if (opcion == 1){
       //Potencias
-      System.out.println("Ahora la cosa se complica, llegamos a la parte de las potencias.");
+      System.out.println("\nAhora la cosa se complica, llegamos a la parte de las potencias.");
       System.out.println("La potencia de un número es el número multiplicado muchas veces.");
       System.out.println("Bastante simple, ¿no?");
       System.out.println("Veamos dos ejemplos para entenderlo.");
@@ -288,10 +292,10 @@ class ActMate{
       System.out.println("");
       System.out.println("Creo que estamos listos para intentar un ejercicio.");
       System.out.println("Ejercicio:  5^3");
-      System.out.println("10");
-      System.out.println("25");
-      System.out.println("125");
-      System.out.println("30");
+      System.out.println("1. 10");
+      System.out.println("2. 25");
+      System.out.println("3. 125");
+      System.out.println("4. 30");
 
 	    //Respuesta 
       R = 3;
@@ -299,7 +303,7 @@ class ActMate{
     }
     else if (opcion == 2){
       //Raíces
-      System.out.println("Ahora que sabemos potencias podemos avanzar a raíces.");
+      System.out.println("\nAhora que sabemos potencias podemos avanzar a raíces.");
       System.out.println("La raíz de un número es el inverso de elevarlo a una potencia.");
       System.out.println("En lecciones anteriores aprendimos las potencias de cualquier número.");
       System.out.println("Para entender las raíces, tu conocimiento en tablas de multiplicar debe estar muy elevado, epecialmente la parte donde se multiplicaba el número por el mismo.");
@@ -327,7 +331,7 @@ class ActMate{
     }
     else if (opcion == 3){
       //Potencias y raíces
-      System.out.println("Si estás aquí es porque quieres un reto. ¡Muy bien!");
+      System.out.println("\nSi estás aquí es porque quieres un reto. ¡Muy bien!");
       System.out.println("Al trabajar raíces y potencas al mismo tiempo es importante saber que podemos simplificar la expresión antes de ponernos a multiplicar y dividir sin sentido.");
       System.out.println("Ejemplo 1: Raíz cuadrada de 9^4");
       System.out.println("Antes de empezar a multiplicar 9 cuatro veces, párate a pensar, ¿es realmente necesario?");
@@ -363,8 +367,7 @@ class ActMate{
     }
   } 
 
-  //Actividades matemáticas 3
-
+  //metodo que recibe las respuestas de matematica y evalua si están buenas o no
   public void Respuestas(){
     int b = scan.nextInt();
     if (b == R){
@@ -376,6 +379,7 @@ class ActMate{
     }
   }
 
+  //retorna la cantidad de respuestas correctas
   public int correctas(){
     return correctas;
   }
