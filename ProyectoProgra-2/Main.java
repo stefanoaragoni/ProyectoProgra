@@ -19,6 +19,7 @@ public class Main {
     ActMate AMate = new ActMate();
     brain Brain = new brain();
     escaner Scan = new escaner();
+    Verificador verify = new Verificador();
 
     usuario UsuarioActual = null;
 
@@ -32,6 +33,10 @@ public class Main {
     String user = "";
     String contra = "";
     int opcion2 = 0;
+    int correctasL = 0;
+    int correctasM = 0;
+    int incorrectasL = 0;
+    int incorrectasM = 0;
 
 
     while(opcion != 3 ){
@@ -104,7 +109,21 @@ public class Main {
           if(levelMate == 1){
             int RespuestaCorrecta = AMate.Nivel1(NivelPregunta);
             int respuestaUsu = Scan.nextInt();
-            
+            if(verify.Respuestas2(RespuestaCorrecta, respuestaUsu)){
+              correctasM = correctasM + 1;
+            }
+          }else if(levelMate == 2){
+            int RespuestaCorrecta = AMate.Nivel2(NivelPregunta);
+            int respuestaUsu = Scan.nextInt();
+            if(verify.Respuestas2(RespuestaCorrecta, respuestaUsu)){
+              correctasM = correctasM + 1;
+            }
+          }else if(levelMate == 3){
+            int RespuestaCorrecta = AMate.Nivel3(NivelPregunta);
+            int respuestaUsu = Scan.nextInt();
+            if(verify.Respuestas2(RespuestaCorrecta, respuestaUsu)){
+              correctasM = correctasM + 1;
+            }
           }
           
         }else if (decision == 2){
@@ -118,7 +137,60 @@ public class Main {
 
           //llama a las preguntas de lectura
           int levelLec = UsuarioActual.getNivelLec();
+
           ALec.MenuNivel(levelLec);
+
+          int NivelPregunta = Scan.nextInt();
+
+          if(levelLec == 1){
+            int RespuestaCorrecta = ALec.Nivel1(NivelPregunta);
+            int respuestaUsu = Scan.nextInt();
+            if(verify.Respuestas(RespuestaCorrecta, respuestaUsu)){
+              correctasL = correctasL + 1;
+              if(correctasL == 3){
+                correctasL = 0;
+                UsuarioActual.nivelUpgradeLec(2);
+                System.out.println("Felicidades! Haz subido al nivel 2! \n Sigue asi.\n");
+              }
+            }else{
+            }
+          }
+          if(levelLec == 2){
+            int RespuestaCorrecta = ALec.Nivel2(NivelPregunta);
+            int respuestaUsu = Scan.nextInt();
+            if(verify.Respuestas(RespuestaCorrecta, respuestaUsu)){
+              correctasL = correctasL + 1;
+              if(correctasL == 3){
+                correctasL = 0;
+                UsuarioActual.nivelUpgradeLec(3);
+                System.out.println("Felicidades! Haz subido al nivel 3! \n Sigue asi.\n");
+              }
+            }else{
+              incorrectasL = incorrectasL + 1;
+
+              if(incorrectasL == 3){
+                incorrectasL = 0;
+                UsuarioActual.nivelUpgradeLec(1);
+                System.out.println("Oh no! Haz bajado al nivel 1! \n Intenta de nuevo.\n");
+              }
+
+            }
+          }
+          if(levelLec == 3){
+            int RespuestaCorrecta = ALec.Nivel3(NivelPregunta);
+            int respuestaUsu = Scan.nextInt();
+            if(verify.Respuestas(RespuestaCorrecta, respuestaUsu)){
+              correctasL = correctasL + 1;
+              if (correctasL == 3){
+                correctasL = 0;
+                 //UsuarioActual.nivelUpgradeLec(4);
+                
+              }
+            }else{
+              incorrectasL = 0;
+                UsuarioActual.nivelUpgradeLec(2);
+            }
+          }
 
         }else if (decision ==3){
           seguro5 = 1;
