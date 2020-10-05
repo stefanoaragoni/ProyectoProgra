@@ -1,7 +1,7 @@
 /******************************************************************
 ActMate.java
 Autores: Stefano Aragoni, Rebecca Smith, Roberto Vallecillos, Cayetano molina, Daniel Cabrera, Diego Ruiz
-Última modificación: 2020-09-11
+Última modificación: 2020-10-05
 
 ******************************************************************/
 
@@ -56,6 +56,15 @@ class ActMate{
       System.out.println("3. Potencias y Raíces.");
       System.out.println("4. Salir.");
 
+    }
+
+    if(a == 4){
+      System.out.println("Bienvenido a las actividades de matemática del nivel 3");
+      System.out.println("Elija el ejecicio que desea de realizar:");
+      System.out.println("1. Potencias.");
+      System.out.println("2. Raíces.");
+      System.out.println("3. Potencias y Raíces.");
+      System.out.println("4. Salir.");
     }
     
   }
@@ -152,7 +161,6 @@ class ActMate{
     }
     return R;
   }
-
   //Actividades matemáticas 2
   public int Nivel2(int opcion){
     if (opcion == 1){
@@ -353,12 +361,161 @@ class ActMate{
     }
     else if(opcion == 4){
       System.out.println("Regresando al menu principal.\n");
-    }
-    else{
+
+    } else{
       System.out.print("Número no válido. Por favor ingrese un número entre 1 y 3.");
     }
     return R;
   } 
+  //Nivel 4 de matemática.
+  public int Nivel4(int opcion){
+    //ACTIVIDADES DE ÁLGEBRA
+    if (opcion == 1){
+      System.out.println("Ya que hemos visto las bases de aritmetica, ¡Empezemos a ver álgebra!");
+      System.out.println("El álgebra es donde se empieza la apliación de la aritmetica al mundo real.");
+      System.out.println("Tratemos de resolver un problema así.");
+      System.out.println("Digamos que tengo 2 globos y me regalan más globos mis amigos. Al final del día, me tengo 10 globos. ¿Cuantos globos me dieron?");
+      System.out.println("Pensemos este problema. Sabemos que nos teniamos dos globos al principio, y que tenemos 10 al final. Solo hay que saber cuantos nos dieron");
+      System.out.println("Podemos hacer una ecuació para poder determinar eso.\n2 + x = 10");
+      System.out.println("En el algebra, hay que resolver por el valor desconocido en este caso la x");
+      System.out.println("Se puede despejar la x al restar 2 en ambos lados. Así, que si resta 2 del 10, me duedan 8. Así que me dieron 8 globos en total.\n");
+      System.out.println("Tratemos otro. Digamos que tenemos una cierta cantidad de manzanas, y tuve que darle 3 a mis amigos, y ahora me quedan 4 manzanas. ¿Cuantas me quedan ahora?");
+      System.out.println("En esta caso, seria x - 3 = 4. Sería hay que sumar 3 en ambor lados para despejar a la x. Al sumar 4 + 3 da 7. Así que teniamos 7 manzanas.");
+      System.out.println("Okay! Ya con todo esto hagamos un ejercicio");
+      System.out.println("Ejercicio: x + 5 = 6");
+      System.out.println("1. 11\n2. 1\n3. 7\n4. 5");
+      R = 2;
+    }
+  
+  else if(opcion == 2){
+    System.out.println("Ahora sabemos el algebra con la suma y la resta. Ahora con la multiplicación y división.");
+    System.out.println("Tratemos una pregunta en forma de ecuación. Tratemos de resolver 2 * x = 8");
+    System.out.println("Si quisieramos despejar a la x, habría que dividir dos en ambos lados. Recordar: Cualquier numero divido entre si miso da 1, y eso por cualquier numero de ese numero.");
+    System.out.println("Entonces sería 2*x/2 = 8/2, y se simplifica a x = 4. Entonces la respuesta sería 4!");
+    System.out.println("Ahora tratemos esto, x/3 = 2.\n Como hemos visto, sabemos que habria que multiplicar para cancelar la multiplicación. Para esto hay que multiplicar 3 para ambos lados.");
+    System.out.println("Habria que multiplicar 3 en ambos lados. En esto, sería x/3 * 3 = 2 * 3. Al simplificar esto equivale a x = 6.");
+    System.out.println("Ahora que entedemos, hagamos un ejercicio.");
+    System.out.println("Ejercicio: 4x = 16");
+    System.out.println("1. 1\n2. 2\n3. 3\n4. 4");
+    R = 4;
+    }
+  else if(opcion == 3){
+    System.out.print("Ahora sabemos las bases del algebra! Tratemos de usar todas las operaciones en un problema!");
+    System.out.println("Tratemos de resolver 2x + 1 = 7");
+    System.out.println("Primero hay que restar de 7, 1. Así, se da 6. Y esto da 2x = 6.");
+    System.out.println("Ahora asi, ya se puede dividir de forma normal. Al dividir 2 en ambos lados, y al dividir 6 entre 2 equivales a 3.");
+    System.out.println("Bueno, tratemos con otras operaciones: x/3 - 2 = 2");
+    System.out.println("Ahora con esto, primero hay que sumar 2 en ambos lados. Sumar 2 +2 equivale a 4. Y después de multiplicarlo por 3 equivale a 12. Así que la respuesta es 12!");
+    System.out.println("Ahora que ya entendemos, tratemos un problema.");
+    System.out.println("4x - 11 = 1");
+    System.out.println("1. 3\n2. 9\n3. 6\n4. 5");
+    R = 1;
+    }
+  else if(opcion == 4){
+    System.out.println("Regresando al menu principal");
+  }else{
+    System.out.println("Ingrese un valor válido entre 1 y 4.");
+  }
+  return R;
+  }
+  //Nivel  de matemática 5
+  public int Nivel5(int opcion){
+    if (opcion == 1){
+      //Factor común
+      System.out.println("\n¡Felicidades por haber llegado a este punto! Ahora veremos el tema de la factorización.");
+      System.out.println("Puede ser complicado, así que presta atención a los que veremos.");
+      System.out.println("Ya conoces que es un polimomio.");
+      System.out.println("Así: 6x² + 4x + 8");
+      System.out.println("Te daras cuenta que todos los elementos se pueden dividir dentro de 2.");
+      System.out.println("Así que se puede sacar el 2 hacia afuera.");
+      System.out.println("De esta manera: 2 (3x² + 2x + 4).");
+      System.out.println("Lo mismo se puede hacer con variables. ");
+      System.out.println("De la siguiente manera:");
+      System.out.println(" 5x³ + 3x² + 4x --> x(5x² + 3x + 4)");
+      System.out.println("Entonces tanto los números o variables se pueden sacar hacia afuera del paréntesis.");
+      System.out.println("A esto se le conoce como factor común.");
+      System.out.println("Es importante que TODOS los elementos compartan el valor que vas a sacar del paréntesis.");
+      System.out.println("Veamos otros ejemplos de esto:");
+      System.out.println("4x² + 2x  -->  2x(2x + 1)");
+      System.out.println("10x³ - 3x² + x  -->  x(10x² - 3x +1)");
+      System.out.println("-3x + 6  -->  -3(x - 2)");
+      System.out.println("");
+      System.out.println("Ahora probaremos con un ejercicio.");
+      System.out.println("");
+      System.out.println("Ejercicio: 5x³ - 10x² + 25");
+      System.out.println("1. -5(-x³ + 2x² - 5)");
+      System.out.println("2. -5x(-x² + 2x - 5)");
+      System.out.println("3. 5x(x - 2x + 5)");
+      System.out.println("4. 5(x³ - 2x² + 5");
 
+	    //Respuesta 
+      R = 4;
+  
+    }
+    else if (opcion == 2){
+      //Factor común por agrupación.
+      System.out.println("\nAhora que sabemos potencias podemos avanzar a raíces.");
+      System.out.println("La raíz de un número es el inverso de elevarlo a una potencia.");
+      System.out.println("En lecciones anteriores aprendimos las potencias de cualquier número.");
+      System.out.println("Para entender las raíces, tu conocimiento en tablas de multiplicar debe estar muy elevado, epecialmente la parte donde se multiplicaba el número por el mismo.");
+      System.out.println("Una raíz tiene dos puntos importantes, la base de la raíz y lo que se encuentra dentro de la raíz.");
+      System.out.println("Ejemplo 1: Raíz cuadrada de 64.");
+      System.out.println("Primero identificamos la base, una raíz cuadrada es base 2.");
+      System.out.println("La base 2 nos indica que un número se multiplicó por él mismo para llegar a 64.");
+      System.out.println("¿Qué número multiplicado por el mismo es 64?");
+      System.out.println("¡Correcto! Es 8.");
+      System.out.println("Ejemplo 2: Raíz cúbica de 8.");
+      System.out.println("Primero identificamos la base, una raíz cúbica es base 3.");
+      System.out.println("La base 3 nos indica que un número se multiplicó por él mismo  y luego otra vez para llegar a 8.");
+      System.out.println("¿Qué número multiplicado 3 veces es 8?");
+      System.out.println("¡Correcto! Es 2. Fue un poco mas difícil no?");
+      System.out.println("Bien, ahora es hora del ejercicio.");
+      System.out.println("Ejercicio: Raíz cuadrada de 81.");
+      System.out.println("1. 3");
+      System.out.println("2. 9");
+      System.out.println("3. 8");
+      System.out.println("4. 5");
+
+      //Respuesta
+      R = 2;
+
+    }
+    else if (opcion == 3){
+      //Potencias y raíces
+      System.out.println("\nSi estás aquí es porque quieres un reto. ¡Muy bien!");
+      System.out.println("Al trabajar raíces y potencas al mismo tiempo es importante saber que podemos simplificar la expresión antes de ponernos a multiplicar y dividir sin sentido.");
+      System.out.println("Ejemplo 1: Raíz cuadrada de 9^4");
+      System.out.println("Antes de empezar a multiplicar 9 cuatro veces, párate a pensar, ¿es realmente necesario?");
+      System.out.println("Pensemos en la raíz primero, nuetra raíz de base 2 nos indica que nuestro exponente será partido por la mitad.");
+      System.out.println("Simplificando, hallamos que la expresión es equivalente a 9^2.");
+      System.out.println("Este resultado lo conocemos y es 81.");
+      System.out.println("");
+      System.out.println("Ejemplo 2: Raíz cúbica de 5^9");
+      System.out.println("Antes de empezar a multiplicar 5 nueve veces como loco, pensemos como en el otro ejemplo.");
+      System.out.println("Pensemos en la raíz primero, nuetra raíz de base 3 nos indica que nuestro exponente será partido por 3.");
+      System.out.println("Simplificando, hallamos que la expresión es equivalente a 5^3.");
+      System.out.println("Para hallar este resultado multiplicamos 5 tres veces.");
+      System.out.println("5 * 5 * 5");
+      System.out.println("25 * 5");
+      System.out.println("125.");
+      System.out.println("Ahora, podemos pasar al ejercicio");
+      System.out.println("Raiz cuarta de 6^8");
+      System.out.println("1. 36");
+      System.out.println("2. 1296");
+      System.out.println("3. 6");
+      System.out.println("4. 1000");
+
+      //Respuesta
+      R =1;
+
+    }
+    else if(opcion == 4){
+      System.out.println("Regresando al menu principal.\n");
+
+    } else{
+      System.out.print("Número no válido. Por favor ingrese un número entre 1 y 3.");
+    }
+    return R;
+  }
 } 
  
