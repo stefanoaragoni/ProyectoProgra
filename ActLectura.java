@@ -10,9 +10,16 @@ import java.util.Scanner;
 
 
 class ActLectura {
-  private int opcion1;
+  private int preguntas = 3;
   private int l1;
   private int correctas;
+  private String notas;
+  private double notas1 = 0;
+  private double notas2 = 0;
+  private double notas3 = 0;
+  private double notas4 = 0;
+  private double notas5 = 0;
+
 
   Scanner scan = new Scanner(System.in);
   Verificador verify = new Verificador();
@@ -59,11 +66,20 @@ class ActLectura {
     
     //Menú del nivel 4 de lectura que se muestra en el driver
     if(a==4){
-      System.out.println("Bienvenido a las actividades de lectura del nivel 3.\n");
+      System.out.println("Bienvenido a las actividades de lectura del nivel 4.\n");
       System.out.println("Por favor eliga lo que quiere resolver");
       System.out.println("1. Nivel de comprensión literal");
       System.out.println("2. Nivel de comprensión inferencial");
       System.out.println("3. Nivel de comprensión crítico");
+      System.out.println("4. Salir");
+    }
+    //Menú del nivel 5 de lectura que se muestra en el driver
+    if(a==5){
+      System.out.println("Bienvenido a las actividades de lectura del nivel 5.\n");
+      System.out.println("Por favor eliga lo que quiere resolver");
+      System.out.println("1. Cuento");
+      System.out.println("2. Fabula");
+      System.out.println("3. Texto cientifico");
       System.out.println("4. Salir");
     }
   }
@@ -169,10 +185,10 @@ class ActLectura {
       System.out.println("1. Su único proposito es finalizar una oración o párrafo.");
       System.out.println("2. Sirve para separar una enumeración.");
       System.out.println("3. Se utiliza para describir al personaje de una oración.");
-      System.out.println("4. Sire para finalizar una oración o párrafo, y además, se coloca detrás de abreviaciones.");
+      System.out.println("4. Sirve para finalizar una oración o párrafo, y además, se coloca detrás de abreviaciones.");
 
       // Respuesta
-      l1 = 2;
+      l1 = 4;
 
     } else if (opcion == 2) {
       System.out.println("\nEn mi casa tengo perros, gatos, conejos y pajaritos.");
@@ -193,10 +209,10 @@ class ActLectura {
       System.out.println("Habiendo dicho esto, ¿para qué sirven estos dos signos?");
       System.out.println("1. Se utilizan para cualquier tipo de oración");
       System.out.println("2. Se utilizan para preguntas unicamente.");
-      System.out
-          .println("3. Se utilizan para representar el tono de la oración, sea esta una pregunta o una exclamación.");
+      System.out.println("3. Se utilizan para representar el tono de la oración, sea esta una pregunta o una exclamación.");
       System.out.println("4. Se utilizan para exclamaciones unicamente.");
 
+      l1 = 3;
 
     } else if (opcion == 4) {
       System.out.println("Regresando al menu principal.\n");
@@ -271,8 +287,141 @@ class ActLectura {
 
       // Respuesta
       l1 = 4;
+    }else if (opcion == 4) {
+      System.out.println("Regresando al menu principal.\n");
+
+    } else {
+      System.out.print("Usted no ha elegido ninguna de las opciones disponibles");
+      
     }
     return l1;
+  }
+  // Nivel de lectura 5
+  public int Nivel5(int opcion) {
+    if (opcion == 1) {
+      System.out.println("\nEl Cuento.");
+      System.out.println("Un ejemplo de un cuento es Pinocho.");
+      System.out.println("¿Cuáles de estas son características de un cuento?");
+      System.out.println("1. Relaciona situaciones que viven los humanos y las protagonizan animales. Tienen una moraleja al final.");
+      System.out.println("2. Se relata en versos que riman entre sí.");
+      System.out.println("3. Es breve, requiere de interés, viveza y acción, normalmente solo tiene unos cuantos personajes.");
+      System.out.println("4. Un texto dramático en el cual los personajes pasan de un estado desfavorable a uno favorable.");
+
+      // Respuesta
+      l1 = 3;
+
+    } else if (opcion == 2) {
+      System.out.println("\nLa Fábula");
+      System.out.println("Un ejemplo de una fábula es La Liebre y la Tortuga.");
+      System.out.println("¿Cuáles de estas son características de una fábula?");
+      System.out.println("1. Relaciona situaciones que viven los humanos y las protagonizan animales. Tienen una moraleja al final.");
+      System.out.println("2. Un texto dramático en el cual los personajes pasan de un estado favorable a uno desfavorable.");
+      System.out.println("3. Narra una acción extraordinaria en la que el héroe es recordado por toda su comunidad.");
+      System.out.println("4. Sucesos fabulosos con base histórica que se transmiten por tradición.");
+
+      l1 = 1;
+  
+    }
+
+    else if (opcion == 3) {
+      System.out.println("\nTexto Científico");
+      System.out.println("El Origen de las especies de Charles Darwin es un ejemplo de un texto científico.");
+      System.out.println("¿Cuáles de estas son características de un texto científico?");
+      System.out.println("1. Posee introducción, nudo y desenlace.");
+      System.out.println("2. Busca transmitir las emociones del poeta.");
+      System.out.println("3. Está escrito en versos con un hablante lírico.");
+      System.out.println("4. Lenguaje claro, palabras de carácter académico, breve y se concentra en un solo tema.");
+
+      l1 = 4;
+
+    } else if (opcion == 4) {
+      System.out.println("Regresando al menu principal.\n");
+    } else {
+      System.out.print("Usted no ha elegido ninguna de las opciones disponibles");
+    }
+    return l1;
+  }
+
+  public void  CambioNotas(boolean correcto, int nivel){
+    //Verificar si la respuesta ingresada fue la correcta
+    if(correcto == true){
+      //Verificar de que nivel provino la respuesta y de acuerdo a eso cambiar la nota
+      if(nivel == 1){
+        //Se cambia la nota siempre y cuando no se exceda el numero de preguntas del examen
+        if(notas1<=preguntas){
+          notas1++;
+        }
+      }
+      else if(nivel ==2){
+        if(notas2<=preguntas){
+          notas2++;
+        }
+      }
+      else if(nivel == 3){
+        if(notas3<=preguntas){
+          notas3++;
+        }
+      }
+      else if(nivel==4){
+        if(notas4<=preguntas){
+          notas4++;
+        }
+      }
+      else if(nivel==5){
+        if(notas5<=preguntas){
+          notas5++;
+        }
+      }
+    }
+    else if(correcto == false){
+      if(nivel==1){
+        if(notas1>0){
+          notas1--;
+        }
+      }
+      if(nivel==2){
+        if(notas2>0){
+          notas2--;
+        }
+      }
+      if(nivel==1){
+        if(notas3>0){
+          notas3--;
+        }
+      }
+
+      if(nivel==1){
+        if(notas4>0){
+          notas4--;
+        }
+      }
+
+      if(nivel==1){
+        if(notas5>0){
+          notas5--;
+        }
+      }
+
+    }
+  }
+
+  public String getNotas(int nivel){
+    if(nivel==1){
+      notas = "Su nota en el nivel 1 es de: " + notas1 + "%\n";
+    }
+    else if(nivel==2){
+      notas = "Su nota en el nivel 2 es de: " + notas2 + "%\n";
+    }
+    else if(nivel==3){
+      notas = "Su nota en el nivel 3 es de: " + notas3 + "%\n";
+    }
+    else if(nivel==4){
+      notas = "Su nota en el nivel 4 es de: " + notas4 + "%\n";
+    }
+    else if(nivel==5){
+      notas = "Su nota en el nivel 5 es de: " + notas5 + "%\n";
+    }
+    return notas;
   }
   
 

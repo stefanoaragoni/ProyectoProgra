@@ -1,14 +1,14 @@
 /******************************************************************
 ActMate.java
 Autores: Stefano Aragoni, Rebecca Smith, Roberto Vallecillos, Cayetano molina, Daniel Cabrera, Diego Ruiz
-Última modificación: 2020-09-11
+Última modificación: 2020-10-05
 
 ******************************************************************/
 
 //se importan las utilidades de java
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-import java.util.Scanner;
+
 
 //crea la clase
 class ActMate{
@@ -16,8 +16,16 @@ class ActMate{
   Random rand = new Random();
 
   private int correctas, opcion, R;
+  private String notas;
+  private double notas1 = 0;
+  private double notas2 = 0;
+  private double notas3 = 0;
+  private double notas4 = 0;
+  private double notas5 = 0;
+  private int preguntas = 3;
   
-  Scanner scan = new Scanner(System.in);
+
+  escaner scan = new escaner();
 
   //constructor
   public ActMate() {
@@ -29,13 +37,12 @@ class ActMate{
     //menu 1
     if(a == 1){
       System.out.println("Bienvenido a las actividades de matemática del nivel 1");
-      System.out.println("Elija el ejecicio que desea de realizar:");
-      System.out.println("1. Suma.");
-      System.out.println("2. Resta");
+      System.out.println("Elija la actividad que desea de realizar:");
+      System.out.println("1. Introducción a suma.");
+      System.out.println("2. Introducción a resta");
       System.out.println("3. Suma y Resta");
       System.out.println("4. Salir.");
-      int opcion1 = scan.nextInt();
-      Nivel1(opcion1);
+
       }
     //menu 2
     if(a == 2) {
@@ -45,8 +52,7 @@ class ActMate{
       System.out.println("2. División.");
       System.out.println("3. Multiplicación y División.");
       System.out.println("4. Salir.");
-      int opcion1 = scan.nextInt();
-      Nivel2(opcion1);
+
     }
     //menu 3
     if(a == 3) {
@@ -56,15 +62,31 @@ class ActMate{
       System.out.println("2. Raíces.");
       System.out.println("3. Potencias y Raíces.");
       System.out.println("4. Salir.");
-      int opcion1 = scan.nextInt();
-      Nivel3(opcion1);
 
     }
+
+    if(a == 4){
+      System.out.println("Bienvenido a las actividades de matemática del nivel 4");
+      System.out.println("Elija el ejecicio que desea de realizar:");
+      System.out.println("1. Potencias.");
+      System.out.println("2. Raíces.");
+      System.out.println("3. Potencias y Raíces.");
+      System.out.println("4. Salir.");
+    } 
+
+    if(a == 5){
+      System.out.println("Bienvenido a las actividades de matemática del nivel 5");
+      System.out.println("Elija el ejecicio que desea de realizar:");
+      System.out.println("1. Polinomios.");
+      System.out.println("2. Factor Común.");
+      System.out.println("3. Multiplicación de Polinomios.");
+      System.out.println("4. Salir.");
+    } 
     
   }
 
   //metodo que instancia las preguntas del nivel 1
-  public void Nivel1(int opcion){
+  public int Nivel1(int opcion){
     if (opcion == 1){
       //Sumar
       System.out.println("\n1, 2, 3 , 4, 5...");
@@ -97,7 +119,6 @@ class ActMate{
       System.out.println("4. 55");
 
       R = 3;
-      Respuestas();
 
     } else if (opcion == 2){
       //Restar
@@ -129,7 +150,6 @@ class ActMate{
 
 
       R = 2;
-      Respuestas();
 
     } else if (opcion == 3){
       //Suma y Resta
@@ -147,7 +167,6 @@ class ActMate{
 
 
       R = 4;
-      Respuestas();
 
     } else if(opcion == 4){
       System.out.println("Regresando al menu principal.\n");
@@ -156,10 +175,10 @@ class ActMate{
     else {
       System.out.println("Número no válido. Por favor ingrese un número entre 1 y 3.");
     }
+    return R;
   }
-
   //Actividades matemáticas 2
-  public void Nivel2(int opcion){
+  public int Nivel2(int opcion){
     if (opcion == 1){
       //Multiplicar
       System.out.println("\nLlegamos a la parte de multiplicar");
@@ -203,7 +222,6 @@ class ActMate{
       
 
       R = 3;
-      Respuestas();
 
     } else if (opcion == 2){
       //Dividir
@@ -239,7 +257,6 @@ class ActMate{
 
 
       R = 2;
-      Respuestas();
 
     } else if (opcion == 3){
       //Multiplicar y Dividir
@@ -258,7 +275,6 @@ class ActMate{
 
 
       R = 3;
-      Respuestas();
 
     } else if(opcion == 4){
       System.out.println("Regresando al menu principal.\n");
@@ -267,10 +283,11 @@ class ActMate{
     else {
       System.out.println("Número no válido. Por favor ingrese un número entre 1 y 3.");
     }
+    return R;
   }
 
   //Actividades matemáticas 3
-  public void Nivel3(int opcion){
+  public int Nivel3(int opcion){
     if (opcion == 1){
       //Potencias
       System.out.println("\nAhora la cosa se complica, llegamos a la parte de las potencias.");
@@ -299,7 +316,7 @@ class ActMate{
 
 	    //Respuesta 
       R = 3;
-      Respuestas();
+  
     }
     else if (opcion == 2){
       //Raíces
@@ -327,7 +344,7 @@ class ActMate{
 
       //Respuesta
       R = 2;
-      Respuestas();
+
     }
     else if (opcion == 3){
       //Potencias y raíces
@@ -356,33 +373,259 @@ class ActMate{
 
       //Respuesta
       R =1;
-      Respuestas();
 
     }
     else if(opcion == 4){
       System.out.println("Regresando al menu principal.\n");
-    }
-    else{
+
+    } else{
       System.out.print("Número no válido. Por favor ingrese un número entre 1 y 3.");
     }
+    return R;
   } 
-
-  //metodo que recibe las respuestas de matematica y evalua si están buenas o no
-  public void Respuestas(){
-    int b = scan.nextInt();
-    if (b == R){
-      System.out.println("¡Correcto! Muy bien hecho.\n\n");
-      correctas++;
+  //Nivel 4 de matemática.
+  public int Nivel4(int opcion){
+    //ACTIVIDADES DE ÁLGEBRA
+    if (opcion == 1){
+      System.out.println("Ya que hemos visto las bases de aritmetica, ¡Empezemos a ver álgebra!");
+      System.out.println("El álgebra es donde se empieza la apliación de la aritmetica al mundo real.");
+      System.out.println("Tratemos de resolver un problema así.");
+      System.out.println("Digamos que tengo 2 globos y me regalan más globos mis amigos. Al final del día, me tengo 10 globos. ¿Cuantos globos me dieron?");
+      System.out.println("Pensemos este problema. Sabemos que nos teniamos dos globos al principio, y que tenemos 10 al final. Solo hay que saber cuantos nos dieron");
+      System.out.println("Podemos hacer una ecuació para poder determinar eso.\n2 + x = 10");
+      System.out.println("En el algebra, hay que resolver por el valor desconocido en este caso la x");
+      System.out.println("Se puede despejar la x al restar 2 en ambos lados. Así, que si resta 2 del 10, me duedan 8. Así que me dieron 8 globos en total.\n");
+      System.out.println("Tratemos otro. Digamos que tenemos una cierta cantidad de manzanas, y tuve que darle 3 a mis amigos, y ahora me quedan 4 manzanas. ¿Cuantas me quedan ahora?");
+      System.out.println("En esta caso, seria x - 3 = 4. Sería hay que sumar 3 en ambor lados para despejar a la x. Al sumar 4 + 3 da 7. Así que teniamos 7 manzanas.");
+      System.out.println("Okay! Ya con todo esto hagamos un ejercicio");
+      System.out.println("Ejercicio: x + 5 = 6");
+      System.out.println("1. 11\n2. 1\n3. 7\n4. 5");
+      R = 2;
     }
-    else {
-      System.out.println("Eh. Incorrecto. La respuesta correcta era: "+R+"\n\n");
+  
+  else if(opcion == 2){
+    System.out.println("Ahora sabemos el algebra con la suma y la resta. Ahora con la multiplicación y división.");
+    System.out.println("Tratemos una pregunta en forma de ecuación. Tratemos de resolver 2 * x = 8");
+    System.out.println("Si quisieramos despejar a la x, habría que dividir dos en ambos lados. Recordar: Cualquier numero divido entre si miso da 1, y eso por cualquier numero de ese numero.");
+    System.out.println("Entonces sería 2*x/2 = 8/2, y se simplifica a x = 4. Entonces la respuesta sería 4!");
+    System.out.println("Ahora tratemos esto, x/3 = 2.\n Como hemos visto, sabemos que habria que multiplicar para cancelar la multiplicación. Para esto hay que multiplicar 3 para ambos lados.");
+    System.out.println("Habria que multiplicar 3 en ambos lados. En esto, sería x/3 * 3 = 2 * 3. Al simplificar esto equivale a x = 6.");
+    System.out.println("Ahora que entedemos, hagamos un ejercicio.");
+    System.out.println("Ejercicio: 4x = 16");
+    System.out.println("1. 1\n2. 2\n3. 3\n4. 4");
+    R = 4;
+    }
+  else if(opcion == 3){
+    System.out.print("Ahora sabemos las bases del algebra! Tratemos de usar todas las operaciones en un problema!");
+    System.out.println("Tratemos de resolver 2x + 1 = 7");
+    System.out.println("Primero hay que restar de 7, 1. Así, se da 6. Y esto da 2x = 6.");
+    System.out.println("Ahora asi, ya se puede dividir de forma normal. Al dividir 2 en ambos lados, y al dividir 6 entre 2 equivales a 3.");
+    System.out.println("Bueno, tratemos con otras operaciones: x/3 - 2 = 2");
+    System.out.println("Ahora con esto, primero hay que sumar 2 en ambos lados. Sumar 2 +2 equivale a 4. Y después de multiplicarlo por 3 equivale a 12. Así que la respuesta es 12!");
+    System.out.println("Ahora que ya entendemos, tratemos un problema.");
+    System.out.println("4x - 11 = 1");
+    System.out.println("1. 3\n2. 9\n3. 6\n4. 5");
+    R = 1;
+    }
+  else if(opcion == 4){
+    System.out.println("Regresando al menu principal");
+  }else{
+    System.out.println("Ingrese un valor válido entre 1 y 4.");
+  }
+  return R;
+  }
+  //Nivel  de matemática 5
+  public int Nivel5(int opcion){
+    if (opcion == 1){
+      //Polinomios
+      System.out.println("\nAhora que ya conoces las bases de la algebra. Vamos aprender que es un polinomio.");
+      System.out.println("Un polinomio es una combinación de varios elementos alegebraicos separados por + o -.");
+      System.out.println("De la siguiente manera: 6x² + 4x - 6");
+      System.out.println("Este es un polinomio de tres términos. O trinomio.");
+      System.out.println("Cada se término se cuenta como una variable o constante. Separada por + o -.");
+      System.out.println("Otro ejemplo sería: 4x + 6.");
+      System.out.println("Este es un binomio.");
+      System.out.println("Ente los polinomios también existen operaciones de suma y de resta.");
+      System.out.println("Por ejemplo.");
+      System.out.println(" 5x³ + 3x² + 4x + (5x² + 3x + 4)");
+      System.out.println("En este caso lo que tiene que suceder es que los términos de igual grado se suman o resta con los que se encuentran dentro del paréntesis.");
+      System.out.println("Entonces los que tiene x² se suman entre sí y los que tiene x también.");
+      System.out.println("De la siguiente manera: 5x³ + 3x² + 5x² + 4x + 3x +4.");
+      System.out.println("Esto quedaría como resultado: 5x³ + 8x² + 7x + 4");
+      System.out.println("");
+      System.out.println("Con la resta es igual. La única diferencia es que lo que esta dentro del paréntesis cambia de signo.");
+      System.out.println("Ejemplo: 4x² + 5x - (2x) = 4x² + 3x.");
+      System.out.println("Analiza con cuidado lo que se esta haciendo. Miremos otros ejemplos: ");
+      System.out.println("4x - 6x + 7x = 5x");
+      System.out.println("3x² + 4x - x² + 5x + 1 = 2x² + 9x + 1.");
+      System.out.println("6x + 36 - (6x²) = -6x² + 6x + 36");
+      System.out.println("");
+      System.out.println("¿Listo? Vamos a hacer un ejercio.");
+      System.out.println("Ejercicio: 10x³ + 6x² + 3x - (5x³ + 3x² + x)");
+      System.out.println("1. 5x³ + 3x² + x");
+      System.out.println("2. 5x³ + 3x² + 2x");
+      System.out.println("3. 15x³ + 9x² + 4x");
+      System.out.println("4. 5x³ + 9x² + 4x");
+
+	    //Respuesta 
+      R = 2;
+  
+    }
+    else if (opcion == 2){
+      //Factor común
+      System.out.println("\n¡Felicidades por haber llegado a este punto! Ahora veremos el tema de la factorización.");
+      System.out.println("Puede ser complicado, así que presta atención a los que veremos.");
+      System.out.println("Ya conoces que es un polimomio.");
+      System.out.println("Así: 6x² + 4x + 8");
+      System.out.println("Te daras cuenta que todos los elementos se pueden dividir dentro de 2.");
+      System.out.println("Así que se puede sacar el 2 hacia afuera.");
+      System.out.println("De esta manera: 2 (3x² + 2x + 4).");
+      System.out.println("Lo mismo se puede hacer con variables. ");
+      System.out.println("De la siguiente manera:");
+      System.out.println(" 5x³ + 3x² + 4x --> x(5x² + 3x + 4)");
+      System.out.println("Entonces tanto los números o variables se pueden sacar hacia afuera del paréntesis.");
+      System.out.println("A esto se le conoce como factor común.");
+      System.out.println("Es importante que TODOS los elementos compartan el valor que vas a sacar del paréntesis.");
+      System.out.println("Veamos otros ejemplos de esto:");
+      System.out.println("4x² + 2x  -->  2x(2x + 1)");
+      System.out.println("10x³ - 3x² + x  -->  x(10x² - 3x +1)");
+      System.out.println("-3x + 6  -->  -3(x - 2)");
+      System.out.println("");
+      System.out.println("Ahora probaremos con un ejercicio.");
+      System.out.println("");
+      System.out.println("Ejercicio: 5x³ - 10x² + 25");
+      System.out.println("1. -5(-x³ + 2x² - 5)");
+      System.out.println("2. -5x(-x² + 2x - 5)");
+      System.out.println("3. 5x(x - 2x + 5)");
+      System.out.println("4. 5(x³ - 2x² + 5");
+
+	    //Respuesta 
+      R = 4;
+
+    }
+    else if (opcion == 3){
+      //Potencias y raíces
+      System.out.println("\nAhora vamos a ver un último tema de polinomios.");
+      System.out.println("Esta es la multiplicación de polinomios. Vamos a multiplicar dos binomios.");
+      System.out.println("Es un proceso algo complicado. Así que presta atención. ");
+      System.out.println("(5x + 6)(2x + 1)");
+      System.out.println("Vemos que el polinomio de la derecha tiene dos términos. Vamos a multiplicar el primer término del paréntesis a la izquierda por los términos dentro del paréntesis de la derecha. ");
+      System.out.println("Nos queda así: 10x² + 5x.");
+      System.out.println("Luego hacemos el mismo proceso con el segundo término. Eso lo sumamos a lo anterior.");
+      System.out.println("Nos quedaría así: ");
+      System.out.println("10x² + 5x + 12x + 6 = 10x² + 17x + 6");
+      System.out.println("Entoces nuestra respuesta es: 10x² + 17x + 6");
+      System.out.println("Un ejemplo más: ");
+      System.out.println("(2x + 1)(3x - 1)");
+      System.out.println(" 6x² - 2x + 3x - 1 = 6x² + x - 1 ");
+      System.out.println("");
+      System.out.println("Okay. Ahora haremos un repaso de los temas vistos anteriormente.");
+      System.out.println("");
+      System.out.println("Selecciona la opción con las dos respuestas correctas.");
+      System.out.println("1. (5x + 6)(3x + 2)");
+      System.out.println("2. 4x² + 12x + 6x ");
+      System.out.println("");
+      System.out.println("Respuestas:");
+      System.out.println("1. 15x² + 28x + 12  Y  2x(2x + 9)");
+      System.out.println("2. 15x² + 28x + 12  Y  2x(2x + 6x + 3)");
+      System.out.println("3. 15x² + 10x + 18x + 12  Y  2x(2x + 6x + 3)");
+      System.out.println("4. 15x² + 10x + 18x + 12  Y  2x(2x + 9)");
+
+      //Respuesta
+      R =1;
+
+    }
+    else if(opcion == 4){
+      System.out.println("Regresando al menu principal.\n");
+
+    } else{
+      System.out.print("Número no válido. Por favor ingrese un número entre 1 y 3.");
+    }
+    return R;
+  }
+
+  public void  CambioNotas(boolean correcto, int nivel){
+    //Verificar si la respuesta ingresada fue la correcta
+    if(correcto == true){
+      //Verificar de que nivel provino la respuesta y de acuerdo a eso cambiar la nota
+      if(nivel == 1){
+        //Se cambia la nota siempre y cuando no se exceda el numero de preguntas del examen
+        if(notas1<=preguntas){
+          notas1++;
+        }
+      }
+      else if(nivel ==2){
+        if(notas2<=preguntas){
+          notas2++;
+        }
+      }
+      else if(nivel == 3){
+        if(notas3<=preguntas){
+          notas3++;
+        }
+      }
+      else if(nivel==4){
+        if(notas4<=preguntas){
+          notas4++;
+        }
+      }
+      else if(nivel==5){
+        if(notas5<=preguntas){
+          notas5++;
+        }
+      }
+    }
+    else if(correcto == false){
+      if(nivel==1){
+        if(notas1>0){
+          notas1--;
+        }
+      }
+      if(nivel==2){
+        if(notas2>0){
+          notas2--;
+        }
+      }
+      if(nivel==1){
+        if(notas3>0){
+          notas3--;
+        }
+      }
+
+      if(nivel==1){
+        if(notas4>0){
+          notas4--;
+        }
+      }
+
+      if(nivel==1){
+        if(notas5>0){
+          notas5--;
+        }
+      }
+
     }
   }
 
-  //retorna la cantidad de respuestas correctas
-  public int correctas(){
-    return correctas;
+  public String getNotas(int nivel){
+    if(nivel==1){
+      notas = "Su nota en el nivel 1 es de: " + notas1 + "%\n";
+    }
+    else if(nivel==2){
+      notas = "Su nota en el nivel 2 es de: " + notas2 + "%\n";
+    }
+    else if(nivel==3){
+      notas = "Su nota en el nivel 3 es de: " + notas3 + "%\n";
+    }
+    else if(nivel==4){
+      notas = "Su nota en el nivel 4 es de: " + notas4 + "%\n";
+    }
+    else if(nivel==5){
+      notas = "Su nota en el nivel 5 es de: " + notas5 + "%\n";
+    }
+    return notas;
   }
+
 
 } 
  
